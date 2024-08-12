@@ -11,7 +11,14 @@ const PhotoGrid: React.FC<PhotoGridComponentProps> = ({ customerID, cusomerName 
     const { images, loadingImages, error } = useCustomerPhotos(customerID);
 
     if (error) return <ErrorComponent error={error} />;
-    if (images == null || images.length == 0) return <h1 className='text-center mt-10'>Loading images</h1>
+    if (images == null || images.length == 0){
+        return <div>
+                    <h1 className='text-center mt-10'>Loading images</h1>
+                    {loadingImages ?
+                    <Spinner /> : <></>
+    }
+        </div>   
+    } 
 
     return (
         <>
@@ -19,7 +26,7 @@ const PhotoGrid: React.FC<PhotoGridComponentProps> = ({ customerID, cusomerName 
             {
                 loadingImages ?
                     <Spinner /> :
-                    <div className='grid grid-cols-3 gap-y-10 gap-x-20 mx-16 mt-8'>
+                    <div className='grid grid-cols-2 md:grid-cols-3 gap-y-6 md:gap-y-10 gap-x-4 md:gap-x-20 md:mx-16 mt-8'>
                         {
                             images.map(i => <img className='h-60 rounded-xl shadow-xl verflow-hidden w-full object-cover' src={i.download_url} alt={'Image by ' + i.author} key={'image-' + i.id} />)
                         }
