@@ -17,7 +17,7 @@ function App() {
           <div className="md:w-3/12 border-r border-gray-200">
             <CustomersList selectCustomerCallback={selectCustomerHandler} />
           </div>
-          <div className="md:w-9/12">
+          <div className="md:w-9/12 overflow-auto">
             <CustomerDetails customer={selectedCustomer} />
           </div>
         </div>

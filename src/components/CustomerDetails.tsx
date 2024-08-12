@@ -17,7 +17,6 @@ const CustomerDetails: React.FC<CustomerDetailsComponentProps> = ({ customer }) 
     },[customer]);
 
     const closeDetailsScreenMobile = () => {
-        console.log("close mobile screen");
         setShowDetailsMobileScreen(false);
     }
 
@@ -27,7 +26,7 @@ const CustomerDetails: React.FC<CustomerDetailsComponentProps> = ({ customer }) 
     const { city, state, country, postcode } = customer.location;
 
     return (
-        <div className={`absolute transition-all duration-150 ease-in-out md:relative ${isMobile ? showDetailsMobileScreen ? 'top-0':'top-[100vh] hidden':''} left-0 max-h-screen overflow-y-scroll p-8 rounded-md bg-gray-100 z-10 pt-24 md:pt-8`}>
+        <div className={`fixed md:relative h-full ${isMobile ? showDetailsMobileScreen ? 'top-0':'hidden':''} left-0 overflow-auto p-8 rounded-md bg-gray-100 z-10 pt-24 md:pt-8`}>
             <div className="md:hidden flex fixed top-0 right-0 md:relative w-full justify-end mb-2 bg-gray-100 z-10 py-6 px-8" onClick={closeDetailsScreenMobile}>
                 <button className='text-blue-600'>close</button>
             </div>
