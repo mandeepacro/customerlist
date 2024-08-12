@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*CUSTOM CSS*/
+::-webkit-scrollbar-track {
+  @apply bg-gray-200;
+}
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+ @apply bg-gray-500;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded
+}
+
+.spinner {
+  position: relative;
+  width: 40px; 
+  padding-top: 40px;
+  margin: 10% auto;
+  -webkit-animation: rotation .6s infinite linear;
+  animation: rotation .6s infinite linear;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid rgb(109, 109, 109);
+  border-radius: 100%;
+}
+@-webkit-keyframes rotation {
+from {
+  -webkit-transform: rotate(0deg);
+}
+to {
+  -webkit-transform: rotate(359deg);
+}
+}
+
+@-moz-keyframes rotation {
+from {
+  -moz-transform: rotate(0deg);
+}
+to {
+  -moz-transform: rotate(359deg);
+}
+}
+
+@-o-keyframes rotation {
+from {
+  -o-transform: rotate(0deg);
+}
+to {
+  -o-transform: rotate(359deg);
+}
+}
+
+@keyframes rotation {
+from {
+  transform: rotate(0deg);
+}
+to {
+  transform: rotate(359deg);
+}
+}
