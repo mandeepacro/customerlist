@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useRef, useCallback } from 'react'
 import { Customer } from '../model/Customer';
 import CustomerItem from './CustomerItem';
 import Spinner from './Spinner';
